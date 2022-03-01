@@ -10,6 +10,7 @@ class Register extends Component{
             idkey:"",
             firstname:"",
             lastname:""
+        
         }
         this.handleChang = this.handleChang.bind(this);
         this.handleClicked = this.handleClicked.bind(this);
@@ -24,7 +25,8 @@ class Register extends Component{
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
-            lastname:this.state.lastname
+            lastname:this.state.lastname,
+            email:JSON.parse(localStorage.getItem('user')).email,
         }
         axios.post(url,data)
         this.setState({
