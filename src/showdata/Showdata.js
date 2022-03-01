@@ -151,11 +151,11 @@ export default class Showdata extends Component{
                                                         </div>
                                                         <div className="form-group">
                                                             <label>email:</label>
-                                                            <input type="tel" className="form-control" id="phonenumber" onChange={this.handleChang} value={this.state.email}/>
+                                                            <input type="tel" className="form-control" id="email" onChange={this.handleChang} value={this.state.email}/>
                                                         </div>
                                                         <div className="form-group">
-                                                            <label>email:</label>
-                                                            <input type="text" className="form-control" id="email" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="12-3456-7890" onChange={this.handleChang} value={this.state.phonenumber}/>
+                                                            <label>phonenumber:</label>
+                                                            <input type="text" className="form-control" id="phonenumber" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="12-3456-7890" onChange={this.handleChang} value={this.state.phonenumber}/>
                                                         </div>
                                                         
                                                         <button type="button" className="btn btn-primary" onClick={this.handleClicked}>Submit</button>
