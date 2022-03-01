@@ -13,6 +13,7 @@ export default class Showdata extends Component{
             idkey:"",
             firstname:"",
             lastname:"",
+            phonenumber:"",
             email:""
         }
         this.handleChang = this.handleChang.bind(this);
@@ -58,6 +59,7 @@ export default class Showdata extends Component{
             idkey:user.id,
             firstname:user.firstname,
             lastname:user.lastname,
+            phonenumber:user.phonenumber,
             email:user.email
         })
     }
@@ -70,6 +72,7 @@ export default class Showdata extends Component{
             idkey:this.state.idkey,
             firstname:this.state.firstname,
             lastname:this.state.lastname,
+            phonenumber:this.state.phonenumber,
             email:this.state.email
         }
         axios.put(url,data)
@@ -88,6 +91,7 @@ export default class Showdata extends Component{
             idkey:"",
             firstname:"",
             lastname:"",
+            phonenumber:"",
             email:""
         });
 	this.closeModal();
@@ -108,6 +112,7 @@ export default class Showdata extends Component{
                             <th>ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
+                            <th>Phone Number</th>
                             <th>regisTime</th>
                             <th>email</th>
                             </tr>
@@ -120,6 +125,7 @@ export default class Showdata extends Component{
                                             <td>{user.id}</td>
                                             <td>{user.firstname}</td>
                                             <td>{user.lastname}</td>
+                                            <td>{user.phonenumber}</td>
                                             <td>{user.regisTime}</td>
                                             <td>{user.email}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={()=>this.call(user)}>Edit</button></td>
@@ -145,7 +151,11 @@ export default class Showdata extends Component{
                                                         </div>
                                                         <div className="form-group">
                                                             <label>email:</label>
-                                                            <input type="text" className="form-control" id="email" onChange={this.handleChang} value={this.state.email}/>
+                                                            <input type="tel" className="form-control" id="phonenumber" onChange={this.handleChang} value={this.state.email}/>
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <label>email:</label>
+                                                            <input type="text" className="form-control" id="email" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="12-3456-7890" onChange={this.handleChang} value={this.state.phonenumber}/>
                                                         </div>
                                                         
                                                         <button type="button" className="btn btn-primary" onClick={this.handleClicked}>Submit</button>

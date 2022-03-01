@@ -75,6 +75,7 @@ app.post('/data', function(req, res){
         
         firstname:req.body.firstname,
         lastname:req.body.lastname,
+        phonenumber:req.body.phonenumber,
         registime:dateTime,
         email:req.body.email
     };
